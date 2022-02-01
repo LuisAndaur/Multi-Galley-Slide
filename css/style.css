@@ -1,0 +1,200 @@
+.container{
+    margin-top: 5%;
+}
+
+h1{
+    width: 100%;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 28px;
+    font-weight: 600;
+    color: rgb(40, 52, 78);
+}
+hr{
+    margin: 0;
+}
+p{
+    color: #868686;
+}
+
+p.fecha{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+}
+div.imgPrinci{
+    width: 100%;
+    height: 350px;
+    overflow: hidden;
+}
+
+div.imgPrinci img{
+    width: 100%;
+    object-fit: contain;
+}
+
+.media {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: 1px dotted rgb(172, 170, 170);
+    margin-bottom: 2px;
+}
+h1.ultimas{
+    font-size: 21px;
+
+}
+
+
+
+p.titSub{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 300;
+    color: rgb(95, 95, 95);
+}
+div.contGallery{
+    width: 100%;
+}
+
+div.galeria{
+    display: flex;
+    width: 100%;
+    height: 50px;
+    overflow: hidden;
+}
+
+.galeria img{
+    width: 90px;
+    object-fit: contain;
+}
+
+a.linkSubti{
+    display: flex;
+    width: 100%;
+}
+
+a.linkSubti div{
+    float: right;
+    width: 80%;
+}
+
+a.linkSubti img{
+    float: left;
+    width: 20%;
+    object-fit: cover;
+}
+
+a h5.titDes{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+    color: black;
+}
+
+a h5.titDes:hover{
+    color: cadetblue;
+}
+
+a.archivo img{
+    max-width: 50px;
+}
+
+
+
+/* CAROUSEL */
+*{margin:0; padding:0;list-style:none;}
+.slide_wrapper{
+  position:relative;
+  height:12vw;
+  width:100%;
+  margin:0 auto;
+  overflow:hidden;
+}
+
+ul{
+    width: 100%;
+    display: flex;
+    left: 0px;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+ul li img{
+    width: 15vw;
+}
+
+.slides{
+  position:absolute;
+  left:0; top:0;
+  transition:left 0.5s ease-out;
+}
+.slides li:not(:last-child){
+  float:left;
+  margin-right:1vw;
+}
+.controls{
+  text-align:center;
+  margin-top: 20px;
+}
+.controls span{
+  background:#333;
+  font-size: large;
+  color:#fff;
+  padding:10px 20px;
+  margin:0 10px;
+  cursor: pointer;
+}
+
+
+  /* FIN CAROUSEL */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  
+
+
+@media only screen and (max-width: 768px) {
+
+    .container{
+        margin-top: 15%;
+    }
+
+    .row{
+        display: block;
+    }
+
+    .col-9 {
+        max-width: 100%;
+    }
+
+    div.imgPrinci {      
+        height: unset;
+    }
+
+    .col-3 {
+         max-width: 100%;
+    }
+
+    div.galeria{       
+        overflow: scroll;
+    }
+}
+
+
+

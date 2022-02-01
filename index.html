@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+    
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="container">
+        <p>NOTICIAS</p>
+        <hr>
+        <h1>Título noticia</h1>
+        <p>Subtítulo noticia</p>
+        <p class="fecha">01-01-1980</p>
+    
+        <div class="row">
+            <div class="col-9">
+                <div class="imgPrinci">
+                    <img src="./img/banner.jpg" alt="">
+                </div>
+                <br>
+
+
+                <div class="slide_wrapper">
+                  <ul class="slides">
+                    <li>
+                      <img src="img/img01.jpg" alt="">
+                    </li>  
+                    <li>
+                      <img src="img/img02.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img03.jpg" alt="">
+                    </li>
+                     <li>
+                      <img src="img/img04.jpg" alt="">
+                    </li>
+                     <li>
+                      <img src="img/img05.jpg" alt="">
+                    </li>
+                     <li>
+                      <img src="img/img06.jpg" alt="">
+                    </li>
+                     <li>
+                      <img src="img/img07.jpg" alt="">
+                    </li>
+                     <li>
+                      <img src="img/img08.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img09.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img10.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img11.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img12.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img13.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img14.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img15.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img16.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img17.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img18.jpg" alt="">
+                    </li>
+                    <!-- <li>
+                      <img src="img/img04.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img08.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img12.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img14.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img02.jpg" alt="">
+                    </li>
+                    <li>
+                      <img src="img/img05.jpg" alt="">
+                    </li> -->
+                  </ul>
+                  </div><p class="controls">
+                    <span class="prev">&#60</span>
+                    <span class="next">&#62</span>
+                  </p>
+
+
+
+
+
+
+
+                <br>
+                <div [froalaView]="post.contenido"></div>
+                <br>
+                <div *ngIf="videoUrl">
+                    <iframe width="100%" height="315" [src]="videoUrl" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+                <hr>
+    
+    
+    
+                <div *ngIf="post.linkPDF">
+                    <h1>Archivos</h1><br>
+                    <iframe [src]="pdfUrl" *ngIf="post.linkPDF" frameborder="0" width="100%" height="790px"></iframe>
+                </div>
+    
+    
+    
+            </div>
+            <div class="col-3">
+                <small>{{post.tipo}}</small>
+                <h1 class="ultimas">Ultimos Post</h1>
+                <br>
+    
+                <ul class="list-unstyled">
+                    <li class="media" *ngFor="let item of ultimasNoticias">
+                        <a class="linkSubti" routerLink="../../post/{{item.id}}" (click)="cargarPost(item.id)">
+                            <img [src]="rutaImg+ item.imgPpal" class="mr-3" alt="..." width="60" height="60">
+                            <div class="media-body">
+                                <h5 class="titDes">{{item.titulo}}</h5>
+                                <p class="titSub">{{item.subtitulo}}</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    
+    
+    
+    </div>
+
+
+
+    <script >
+    var slides = document.querySelector('.slides'),
+    slide = document.querySelectorAll('.slides li'),
+    currentIdx = 0,
+    slideCount = slide.length,
+
+    prevBtn = document.querySelector('.prev'),
+    slideWidth = 15,
+    slideMargin = 1,
+    nextBtn = document.querySelector('.next');
+
+    slides.style.width = (slideWidth + slideMargin) * slideCount - slideMargin + 'vw';
+  
+   function moveSlide(num){
+     slides.style.left = -num * 15 + 'vw';
+     currentIdx = num;
+   }
+    nextBtn.addEventListener('click',function(){
+      if(currentIdx < slideCount-3){
+        moveSlide(currentIdx + 1);
+      }else{
+        moveSlide(0);
+      }
+    });
+    prevBtn.addEventListener('click',function(){
+      if(currentIdx > 0){
+        moveSlide(currentIdx - 1);
+      }else{
+        moveSlide(slideCount-3);
+      }
+    });
+
+    </script>
+
+</body>
+</html>
